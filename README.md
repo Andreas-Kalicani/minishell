@@ -1,2 +1,0 @@
-# minishell
-creating a minishell
