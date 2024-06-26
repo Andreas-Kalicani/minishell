@@ -1,0 +1,4 @@
+Makefile
+input.txt
+minishell
+source

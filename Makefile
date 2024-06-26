@@ -2,11 +2,12 @@ CC = gcc
 NAME = minishell
 BONUS_NAME = minishell_bonus
 CFLAGS = -Wall -Werror -Wextra
-Libraries = -lft -L ./libft
+Libraries = -lft -L ./source/libft -lreadline
 
 src_dir = ./source
 bonus_dir = ./source_bonus
 src = 	$(src_dir)/minishell.c\
+		$(src_dir)/errors.c\
 
 bonus_src =
 

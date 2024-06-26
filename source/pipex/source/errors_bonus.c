@@ -6,7 +6,7 @@
 /*   By: tienshi <tienshi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 13:49:19 by stripet           #+#    #+#             */
-/*   Updated: 2024/06/22 03:20:28 by tienshi          ###   ########.fr       */
+/*   Updated: 2024/06/26 03:57:48 by tienshi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ int	msg(t_data data, int err)
 	else if (err == path_err)
 		ft_printf("Couldn't find valid path\n");
 	else if (err == open_err)
-		perror("Issue opening the input file : ");
+		perror("Issue opening the input file");
 	else if (err == open_create_err)
-		perror("Issues opening or creating the output file :");
+		perror("Issues opening or creating the output file");
 	else if (err == dup_err)
-		perror("Problem dupping fds :");
+		perror("Problem dupping fds");
 	else if (err == pipe_err)
-		perror("Problem creating a pipe :");
+		perror("Problem creating a pipe");
 	else if (err == cmd_err)
 		ft_printf("Couldnt find path for commamd\n");
 	else if (err == fork_err)
-		perror("Error forking :");
+		perror("Error forking");
 	if (data.paths)
 		free(data.paths);
 	exit (err);
