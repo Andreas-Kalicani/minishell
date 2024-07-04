@@ -8,6 +8,7 @@ src_dir = ./source
 bonus_dir = ./source_bonus
 src = 	$(src_dir)/minishell.c\
 		$(src_dir)/errors.c\
+		$(src_dir)/utils.c\
 
 bonus_src =
 

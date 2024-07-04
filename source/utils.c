@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tienshi <tienshi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/22 02:44:07 by tienshi           #+#    #+#             */
-/*   Updated: 2024/07/01 15:50:42 by tienshi          ###   ########.fr       */
+/*   Created: 2024/07/01 15:28:26 by tienshi           #+#    #+#             */
+/*   Updated: 2024/07/01 16:04:30 by tienshi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "./header/utils.h"
 
-# include "structures.h"
-# include "utils.h"
+char	*redirect_extract(char *string)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (string[i])
+	{
+		if ((string[i] != '<' && string[i] != '>') && !ft_isspace(string[i]))
+			break ;
+		i++;
+	}
+	return (&(string[i]));
+}

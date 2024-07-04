@@ -1,0 +1,12 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     minishell
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _parse, symObjAddr: 0x0, symBinAddr: 0x100003AAC, symSize: 0x1C8 }
+  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _parse, symObjAddr: 0x0, symBinAddr: 0x100003AAC, symSize: 0x1C8 }
+  - { offsetInCU: 0x8C, offset: 0x8C, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1C8, symBinAddr: 0x100003C74, symSize: 0xE8 }
+  - { offsetInCU: 0x26, offset: 0x10E, size: 0x8, addend: 0x0, symName: _msg, symObjAddr: 0x0, symBinAddr: 0x100003D5C, symSize: 0x44 }
+  - { offsetInCU: 0x48, offset: 0x130, size: 0x8, addend: 0x0, symName: _msg, symObjAddr: 0x0, symBinAddr: 0x100003D5C, symSize: 0x44 }
+  - { offsetInCU: 0x26, offset: 0x17E, size: 0x8, addend: 0x0, symName: _redirect_extract, symObjAddr: 0x0, symBinAddr: 0x100003DA0, symSize: 0xBC }
+  - { offsetInCU: 0x33, offset: 0x18B, size: 0x8, addend: 0x0, symName: _redirect_extract, symObjAddr: 0x0, symBinAddr: 0x100003DA0, symSize: 0xBC }
+...

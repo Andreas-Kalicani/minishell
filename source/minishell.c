@@ -6,7 +6,7 @@
 /*   By: tienshi <tienshi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 02:45:37 by tienshi           #+#    #+#             */
-/*   Updated: 2024/06/26 06:18:57 by tienshi          ###   ########.fr       */
+/*   Updated: 2024/07/03 20:04:52 by tienshi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,23 @@
 #include <readline/readline.h>
 #include <fcntl.h>
 
+void	redirection(char *command)
+{
+	/*
+	according to my research [n]<word word file descriptor will be redirected to n file descriptor.
+	in the case that n is not specified, it goes to 0 for < and 1 for >.
+	in the case n is a command, same case as above : considered as 0 for < and 1 for >, difference is, it runs in its own fork
+	*/
+}
+
 int	parse(char *command)
 {
 	int		fd;
-	int		p[2];
 	char	*buffer;
 
-	//shell doesnt care a bunch about white spaces
-	pipe(p);
-	if (ft_strnstr(command, "<", ft_strlen(command)))//very basic code, finds < in command line and redirects fds
-	{
-		buffer = ft_strnstr(command, "<", ft_strlen(command)) + 2;//hard coded to have one < one whitespace
-		ft_printf("Received strig :%s\n", buffer);
-		fd = open(buffer, O_RDONLY);
-		printf("my fd is %i\n", fd);
-		if (fd < 0)
-			return (msg(BAD_OPEN));
-		ft_printf("i reached this\n");
-		dup2(p[0], fd),
-		dup2(p[1], STDIN_FILENO);
-		ft_printf("I shouldnt see this\n");
-	}
-	else if (ft_strnstr(command, ">", ft_strlen(command)))//exactly the same idea
-	{
-		fd = open(ft_strnstr(command, ">", ft_strlen(command)), O_WRONLY);
-		if (fd < 0)
-			return (msg(BAD_OPEN));
-		dup2(fd, STDOUT_FILENO);
-		ft_printf("reached end of > snippet");
-	}
+	if (ft_strnstr(command, "<", ft_strlen(command))
+		|| ft_strnstr(command, ">", ft_strlen(command)))
+		redirection(command);
 	return (0);
 }
 
@@ -62,7 +50,7 @@ int	main(int argc, char **argv, char **envp)
 	//it will then do what it has to do
 	{
 		input = readline("Minishell :\n");
-		if (ft_strncmp(input, "stop", ft_strlen(input)) == 0)
+		if (ft_strlen(input) == 4 && ft_strncmp(input, "stop", 4) == 0)
 		{
 			free(input);
 			break ;

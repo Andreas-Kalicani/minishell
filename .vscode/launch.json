@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Debug",
 			"program": "${workspaceFolder}/minishell",
-			"args": ["soy dora"],
+			"args": [],
 			"cwd": "${workspaceFolder}"
 		}
 	]

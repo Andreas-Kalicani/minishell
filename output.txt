@@ -1,4 +1,1 @@
-Makefile
-input.txt
-minishell
-source
+Hello World from shell
